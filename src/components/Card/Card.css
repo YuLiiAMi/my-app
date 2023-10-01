@@ -1,0 +1,18 @@
+.Login-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	width: 350px;
+	height: 500px;
+	margin: 30px auto;
+}
+
+img logo {
+	height: 40vmin;
+}
+
+.App-logo {
+	padding-bottom: 20px;
+}
