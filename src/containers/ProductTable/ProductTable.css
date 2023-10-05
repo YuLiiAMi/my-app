@@ -1,0 +1,35 @@
+.Product-Table {
+	height: 100vh;
+	background-color: #44B26F;
+}
+
+.Logo-white {
+	margin: 20px 0 0 30px;
+	width: 240px;
+	height: 40px;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 31px 70px 0;
+}
+
+.icon {
+	margin-right: 10px;
+	width: 25px;
+	height: 25px;
+	color: black;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 64px;
+	color: white;
+}
+
+.table-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
