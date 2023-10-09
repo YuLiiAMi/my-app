@@ -1,0 +1,12 @@
+button {
+	display: flex;
+	align-items: center;
+	padding: 17px 25px 17px 15px;
+	font-weight: 700;
+	font-size: 16px;
+	color: #05BC52;
+	border: none;
+	width: 189px;
+	height: 52px;
+	cursor: pointer;
+}
