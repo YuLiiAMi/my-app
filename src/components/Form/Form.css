@@ -1,0 +1,16 @@
+.form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 400px;
+	height: 570px;
+	background-color: #F5F5F5;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+
+.App-logo {
+	padding-bottom: 10px;
+}
