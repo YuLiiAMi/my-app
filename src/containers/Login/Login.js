@@ -1,12 +1,13 @@
+import React from "react";
 import "./Login.css";
-import Card from "../../components/Card/Card";
+import Form from "../../components/Form/Form";
 
-function Login() {
+const Login = () => {
   return (
-    <div className="App">
-      <Card />
+    <div className="Login">
+      <Form />
     </div>
   );
-}
+};
 
 export default Login;
