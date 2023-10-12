@@ -1,0 +1,18 @@
+.Product-Preview {
+	background-color: #44B26F;
+	padding: 20px;
+}
+
+.Logo-white {
+	margin: 0 0 0 30px;
+	width: 240px;
+	height: 40px;
+}
+
+.Product-Preview-Container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	width: 100%;
+	margin: 50px 80px;
+}
