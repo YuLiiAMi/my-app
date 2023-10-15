@@ -1,22 +1,51 @@
-import React from "react";
 import "./ProductPreview.css";
+import React, { useState, useEffect } from "react";
 import logoWhite from "../../logo_white.svg";
 import CardProduct from "../../components/CardProduct/CardProduct";
-import productsData from "../../assets/productsData";
+import { useNavigate } from "react-router-dom";
 
 const ProductPreview = () => {
-  const handleCardClick = () => {};
+  const [products, setProducts] = useState({
+    pc: [],
+    clothes: [],
+    plumbing: [],
+  });
+
+  useEffect(() => {
+    fetchProductsForPreview();
+  }, []);
+
+  const fetchProductsForPreview = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/products/preview"
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setProducts(data);
+      } else {
+        console.error("Помилка отримання даних");
+      }
+    } catch (error) {
+      console.error("Помилка отримання даних", error);
+    }
+  };
+  const navigate = useNavigate();
+
+  const handleCardClick = (productId) => {
+    navigate(`/api/products/preview/${productId}`);
+  };
 
   return (
     <div className="Product-Preview">
       <img src={logoWhite} className="Logo-white" alt="Logo" />
       <div className="Product-Preview-Container">
-        {Object.keys(productsData).map((category) =>
-          productsData[category].map((item) => (
+        {Object.keys(products).map((category) =>
+          products[category].map((item) => (
             <CardProduct
-              key={item.ID}
-              product={item}
-              onClick={handleCardClick}
+              key={item.id}
+              data={item}
+              onClick={() => handleCardClick(item.id)}
             />
           ))
         )}
