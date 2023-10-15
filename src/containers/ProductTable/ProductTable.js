@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import "./ProductTable.css";
 import logoWhite from "../../logo_white.svg";
 import ButtonPreview from "../../components/ButtonPreview/ButtonPreview";
@@ -5,6 +6,26 @@ import { FaUserAlt, FaPlus } from "react-icons/fa";
 import Table from "../../components/Table/Table";
 
 const ProductTable = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetchProductsForTable();
+  }, []);
+
+  const fetchProductsForTable = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/products/table");
+      if (response.ok) {
+        const data = await response.json();
+        setProducts(data);
+      } else {
+        console.error("Помилка отримання даних");
+      }
+    } catch (error) {
+      console.error("Помилка отримання даних", error);
+    }
+  };
+
   const handlePreviewClick = () => {
     // Логіка для кнопки "Preview"
   };
@@ -12,30 +33,6 @@ const ProductTable = () => {
   const handleAddProductClick = () => {
     // Логіка для кнопки "Add Product"
   };
-
-  const data = [
-    {
-      ID: 0,
-      Category: "PC",
-      Name: "Lenovo Y50-70",
-      Quantity: 5,
-      Price: 25000.0,
-    },
-    {
-      ID: 1,
-      Category: "Clothes",
-      Name: "Nike M Nk Df Acd21",
-      Quantity: 22,
-      Price: 4000.0,
-    },
-    {
-      ID: 2,
-      Category: "Plumbing",
-      Name: "CERSANIT MITO 17",
-      Quantity: 1337,
-      Price: 5000.0,
-    },
-  ];
 
   return (
     <div className="Product-Table">
@@ -54,7 +51,7 @@ const ProductTable = () => {
       </div>
       <div className="table-block">
         <h2 className="title">Products</h2>
-        <Table data={data} />
+        <Table data={products} />
       </div>
     </div>
   );
