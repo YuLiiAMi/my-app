@@ -4,6 +4,7 @@ import logoWhite from "../../logo_white.svg";
 import ButtonPreview from "../../components/ButtonPreview/ButtonPreview";
 import { FaUserAlt, FaPlus } from "react-icons/fa";
 import Table from "../../components/Table/Table";
+import { useNavigate } from "react-router-dom";
 
 const ProductTable = () => {
   const [products, setProducts] = useState([]);
@@ -26,8 +27,10 @@ const ProductTable = () => {
     }
   };
 
+  const navigate = useNavigate();
+
   const handlePreviewClick = () => {
-    // Логіка для кнопки "Preview"
+    navigate("/api/products/preview");
   };
 
   const handleAddProductClick = () => {

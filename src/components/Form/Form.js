@@ -4,7 +4,7 @@ import logo from "../../logo.svg";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 
-const Form = () => {
+const Form = ({ onLogin }) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ userName: "", password: "" });
@@ -45,6 +45,7 @@ const Form = () => {
           setUserName("");
           setPassword("");
           setMessage("Ваши данные успешно отправлены");
+          onLogin();
         } else {
           setUserName("");
           setPassword("");

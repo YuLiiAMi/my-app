@@ -18,8 +18,8 @@ const Table = ({ data }) => {
       <tbody>
         {Object.keys(data).map((category) =>
           data[category].map((item) => (
-            <tr key={item.ID}>
-              <td>{item.ID}</td>
+            <tr key={item.id}>
+              <td>{item.id}</td>
               <td>{category}</td>
               <td>{item.Name}</td>
               <td>{item.Quantity}</td>
