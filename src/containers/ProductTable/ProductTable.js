@@ -4,6 +4,7 @@ import logoWhite from "../../logo_white.svg";
 import ButtonPreview from "../../components/ButtonPreview/ButtonPreview";
 import { FaUserAlt, FaPlus } from "react-icons/fa";
 import Table from "../../components/Table/Table";
+import { useNavigate } from "react-router-dom";
 
 const ProductTable = () => {
   const [products, setProducts] = useState([]);
@@ -14,7 +15,7 @@ const ProductTable = () => {
 
   const fetchProductsForTable = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/products/table");
+      const response = await fetch("http://localhost:5000/products/table");
       if (response.ok) {
         const data = await response.json();
         setProducts(data);
@@ -26,8 +27,10 @@ const ProductTable = () => {
     }
   };
 
+  const navigate = useNavigate();
+
   const handlePreviewClick = () => {
-    // Логіка для кнопки "Preview"
+    navigate("/products/preview");
   };
 
   const handleAddProductClick = () => {
