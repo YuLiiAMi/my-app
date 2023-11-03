@@ -17,9 +17,7 @@ const ProductPreview = () => {
 
   const fetchProductsForPreview = async () => {
     try {
-      const response = await fetch(
-        "http://localhost:5000/api/products/preview"
-      );
+      const response = await fetch("http://localhost:5000/products/preview");
       if (response.ok) {
         const data = await response.json();
         setProducts(data);
@@ -33,7 +31,7 @@ const ProductPreview = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (productId) => {
-    navigate(`/api/products/preview/${productId}`);
+    navigate(`/products/preview/${productId}`);
   };
 
   return (

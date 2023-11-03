@@ -10,9 +10,9 @@ const AppRouter = () => (
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route element={<PrivateRoute />}>
-        <Route path="/api/products/table" element={<ProductTable />} />
-        <Route path="/api/products/preview" element={<ProductPreview />} />
-        <Route path="/api/products/preview/:productId" element={<Product />} />
+        <Route path="/products/table" element={<ProductTable />} />
+        <Route path="/products/preview" element={<ProductPreview />} />
+        <Route path="/products/preview/:productId" element={<Product />} />
       </Route>
       <Route path="*" element={<div> 404. Page is not found</div>} />
     </Routes>

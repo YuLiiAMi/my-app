@@ -15,7 +15,7 @@ const ProductTable = () => {
 
   const fetchProductsForTable = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/products/table");
+      const response = await fetch("http://localhost:5000/products/table");
       if (response.ok) {
         const data = await response.json();
         setProducts(data);
@@ -30,7 +30,7 @@ const ProductTable = () => {
   const navigate = useNavigate();
 
   const handlePreviewClick = () => {
-    navigate("/api/products/preview");
+    navigate("/products/preview");
   };
 
   const handleAddProductClick = () => {

@@ -7,7 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    navigate("/api/products/table");
+    navigate("/products/table");
   };
 
   return (
