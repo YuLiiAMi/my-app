@@ -60,7 +60,7 @@ const Form = ({ onLogin }) => {
 
   return (
     <div className="form-container">
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={logo} className="App-logo-form" alt="logo" />
       <Input
         value={userName}
         onChange={(e) => setUserName(e.target.value)}
