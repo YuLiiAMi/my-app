@@ -7,7 +7,7 @@ import logoWhite from "../../logo_white.svg";
 const Product = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
-  const navigate = useNavigate(); // Використовуйте useNavigate для навігації
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProduct = async () => {
