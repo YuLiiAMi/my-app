@@ -54,7 +54,7 @@ const ProductTable = () => {
       </div>
       <div className="table-block">
         <h2 className="title">Products</h2>
-        <Table data={products} />
+        <Table data={products} fetchProductsForTable={fetchProductsForTable} />
       </div>
     </div>
   );
